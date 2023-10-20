@@ -23,21 +23,20 @@ export default function SignIn() {
   }, [user]);
 
   // googlelogin
-  const googleLogin = () => {
-    const provider = new GoogleAuthProvider();
-    signInWithPopup(auth, provider).catch((error) => {
+  const googleLogin = async () => {
+    const GoogleProvider = new GoogleAuthProvider();
+    await signInWithPopup(auth, GoogleProvider).catch((error) => {
       console.log(error);
     });
   };
 
   // github login
-  const githubLogin = () => {
-    const provider = new GithubAuthProvider();
-    try {
-      signInWithPopup(auth, provider);
-    } catch (error) {
+  const githubLogin = async () => {
+    const GithubProvider = new GithubAuthProvider();
+
+    await signInWithPopup(auth, GithubProvider).catch((error) => {
       console.log(error);
-    }
+    });
   };
 
   return (
