@@ -7,7 +7,7 @@ import { auth } from "@/firebase/config";
 import { getMessagesRef, sendMessage } from "@/firebase/messages";
 import { child, off, onValue, update } from "firebase/database";
 import { useParams } from "next/navigation";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 
 export default function Chat() {
   const { userId }: { userId: string } = useParams();
@@ -74,8 +74,10 @@ export default function Chat() {
           />
 
           <div className="mt-20" />
-          {messages.map((message: any, index: number) => {
-            return <Message data={message} auth={auth} receiver={receiver} />;
+          {messages.map((message: any, i: number) => {
+            return (
+              <Message key={i} data={message} auth={auth} receiver={receiver} />
+            );
           })}
         </div>
         <div className="flex gap-4 mt-3 mb-5">

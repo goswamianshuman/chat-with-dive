@@ -6,7 +6,7 @@ import {
   GoogleAuthProvider,
   GithubAuthProvider,
 } from "firebase/auth";
-import { auth, firebaseApp } from "@/firebase/config";
+import { auth } from "@/firebase/config";
 import { useAuthContext } from "@/context/AuthContext";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
