@@ -9,7 +9,7 @@ type Props = {
 export default function Sidebar({ allUsers }: Props) {
   return (
     <div className="border-r-[2px] border-[#2c2c2c2e] min-w-[300px] w-max max-w-[350px] overflow-y-scroll scrollbar-hide scroll-smooth transition-all ease-linear duration-100">
-      <div className="w-full h-max mt-3">
+      <div className="w-full h-max mt-3 overflow-y-scroll scrollbar-hide">
         <div className="px-5">
           <button
             onClick={() => {
